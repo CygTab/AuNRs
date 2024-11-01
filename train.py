@@ -36,8 +36,8 @@ x_data = torch.tensor(x.values, dtype=torch.float32)
 y_data = torch.tensor(y.values, dtype=torch.float32)
 
 indice = list(range(1633))
-train_idx = indice[:1389]
-test_idx = indice[1389:]
+train_idx = indice[:1306]
+test_idx = indice[1306:]
 dataset = TensorDataset(x_data, y_data)
 
 train_set = Subset(dataset, train_idx)
