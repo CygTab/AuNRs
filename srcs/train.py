@@ -19,18 +19,10 @@ DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 print("Running on device:", DEVICE.upper())
 
 
-def z_score_normalize(data):
-    normalized_data = zscore(data)
-    return normalized_data
-
-
 dataset = DL('./dataall.CSV')
 data = dataset.load_data()
 x = data.iloc[:, :6]
 y = data.iloc[:, 6:]
-
-x = z_score_normalize(x)
-y = z_score_normalize(y)
 
 x_data = torch.tensor(x.values, dtype=torch.float32)
 y_data = torch.tensor(y.values, dtype=torch.float32)
